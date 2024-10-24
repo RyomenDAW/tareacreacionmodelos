@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Proyectos</title>
+</head>
+<body>
+    <h1>Lista de Proyectos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Duración Estimada</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Finalización</th>
+                <th>Creador</th>
+                <th>Colaboradores</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proyecto in proyectos %}
+            <tr>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{{ proyecto.descripcion }}</td>
+                <td>{{ proyecto.duracionestimada }}</td>
+                <td>{{ proyecto.fechainicio }}</td>
+                <td>{{ proyecto.fechafinalizacion }}</td>
+                <td>{{ proyecto.creador.username }}</td>
+                <td>
+                    {% for colaborador in proyecto.colaboradores.all %}
+                        {{ colaborador.username }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'inicio' %}">Regresar a la página de inicio</a>
+</body>
+</html>

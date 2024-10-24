@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a la Aplicación de Proyectos</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'lista_proyectos' %}">Ver Lista de Proyectos</a></li>
+            <li><a href="{% url 'lista_tareas' %}">Ver Lista de Tareas Asociadas Ordenadas por fecha</a></li>
+            <li><a href="{% url 'lista_usuarios' %}">Ver Lista de Usuarios</a></li>
+
+            <!-- Aquí puedes agregar más enlaces a otras URLs según sea necesario -->
+        </ul>
+    </nav>
+</body>
+</html>
