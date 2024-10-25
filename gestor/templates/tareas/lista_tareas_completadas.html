@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    
+        <ul>
+            {% for tarea in tareas %}
+                <li>
+                    <strong>Título:</strong> {{ tarea.titulo }} <br>
+                    <strong>Descripción:</strong> {{ tarea.descripcion }} <br>
+                    <strong>Prioridad:</strong> {{ tarea.prioridad }} <br>
+                    <strong>Estado:</strong> {{ tarea.estado }} <br>
+                    <strong>Fecha de Creación:</strong> {{ tarea.fechacreacion }} <br>
+                    <strong>Hora de Vencimiento:</strong> {{ tarea.horavencimiento }} <br>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    
+    <a href="{% url 'inicio' %}">Regresar a la página de inicio</a>
+</body>
+</html>
