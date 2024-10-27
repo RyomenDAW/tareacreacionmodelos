@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Último Comentario</title>
+</head>
+<body>
+    <h1>Etiquetas utilizadas en el Proyecto</h1>
+
+    {% if etiquetas %}
+        <ul>
+        {% for etiqueta in etiquetas %}
+            <li>{{ etiqueta.nombre }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron etiquetas para este proyecto.</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+

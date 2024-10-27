@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Último Comentario</title>
+</head>
+<body>
+    <h1>Comentarios que comienzan con "{{ palabra }}" del año {{ año }}</h1>
+
+    {% if comentarios %}
+        <ul>
+        {% for comentario in comentarios %}
+            <li>
+                <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
+                <p><strong>Usuario:</strong> {{ comentario.autor.nombre }}</p>
+                <p><strong>Fecha:</strong> {{ comentario.fecharegistro }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron comentarios que coincidan con la búsqueda.</p>
+    {% endif %}
+    
+</body>
+</html>
+
+
+

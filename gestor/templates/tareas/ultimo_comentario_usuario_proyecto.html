@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Último Comentario</title>
+</head>
+<body>
+    <h1>Último Comentario del Proyecto</h1>
+
+    {% if comentario %}
+        <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
+        <p><strong>Usuario:</strong> {{ comentario.autor.nombre }}</p> <!-- Aquí se muestra el nombre de usuario del autor -->
+        <p><strong>Fecha:</strong> {{ comentario.fecharegistro }}</p>
+    {% else %}
+        <p>No hay comentarios para esta tarea.</p>
+    {% endif %}
+    
+    
+</body>
+</html>
