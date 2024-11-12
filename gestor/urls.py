@@ -5,10 +5,11 @@ from gestor.views import error_400_view, error_403_view, error_404_view, error_5
 
 from django.conf.urls import handler400, handler403, handler404, handler500
 
-handler400 = error_400_view
-handler403 = error_403_view
-handler404 = error_404_view
-handler500 = error_500_view
+handler400 = "gestor.views.error400_view"
+handler403 = "gestor.views.error403_view"
+handler404 = "gestor.views.error404_view"
+handler500 = "gestor.views.error500_view"
+
 urlpatterns = [
     path('', inicio, name='inicio'),  # Página de inicio home
     path('proyectos/', lista_proyectos, name='lista_proyectos'),  # URL para la lista de proyectos

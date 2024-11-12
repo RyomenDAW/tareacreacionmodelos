@@ -1,0 +1,31 @@
+{# ESTO ES EL APARTADO 3 #}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '../static/css/css.css' %}">
+    <script src="{% static '../static/css/css.cssjavascript/script.js' %}"></script>
+    <img src="{% static '../static/imagenes/soulofcinder.png' %}" alt="Imagen de Django">
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a la Aplicación de Proyectos</h1>
+
+    {%block cabecera%}
+    {% endblock %}
+
+    {% include 'estructura/nav.html' %}
+
+    {%block contenido%}
+    {% endblock %}
+
+    {% include 'estructura/footer.html' %}
+
+
+</body>
+</html>
