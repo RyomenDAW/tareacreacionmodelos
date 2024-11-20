@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tareas</title>
-</head>
-<body>
-    <h1>Lista de Tareas</h1>
+{% extends "../estructura/templatefinal.html" %}
+
+{% block cabecera %}
+    <h1>Lista de Proyectos</h1>
+{% endblock %}
+
+{% block contenido %}
     
         <ul>
             {% for tarea in tareas %}
@@ -23,5 +21,4 @@
         </ul>
     
     <a href="{% url 'inicio' %}">Regresar a la página de inicio</a>
-</body>
-</html>
+    {% endblock %}

@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Último Comentario</title>
-</head>
-<body>
-    <h1>Último Comentario del Proyecto</h1>
+{% extends "../estructura/templatefinal.html" %}
+
+{% block cabecera %}
+    <h1>Ultimo comentario del proyecto segun usuario</h1>
+{% endblock %}
+
+{% block contenido %}
 
     {% if comentario %}
         <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
@@ -14,7 +13,4 @@
     {% else %}
         <p>No hay comentarios para esta tarea.</p>
     {% endif %}
-    
-    
-</body>
-</html>
+{% endblock %}

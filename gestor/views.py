@@ -41,7 +41,7 @@ def lista_usuarios(request):
 # concreto en las observaciones a la hora de asignarlas a un usuario.
 
 def lista_tareas_textoconcreto(request, texto_observacion):
-    tareas = AsignacionTarea.objects.all().filter(observaciones__icontains=texto_observacion)
+    tareas = AsignacionTarea.objects.filter(observaciones__icontains=texto_observacion).all()
     return render(request, 'tareas/lista_tareas_textoconcreto.html', {'tareas': tareas})
 
 
@@ -51,7 +51,7 @@ def lista_tareas_textoconcreto(request, texto_observacion):
 def lista_tareas_completadas(request, anio_inicio, anio_fin):
     tareas = Tarea.objects.filter(
         fechacreacion__year__range=(anio_inicio, anio_fin),
-        estado='Completada'
+        completada = True
     )
     return render(request, 'tareas/lista_tareas_completadas.html', {'tareas': tareas})
 

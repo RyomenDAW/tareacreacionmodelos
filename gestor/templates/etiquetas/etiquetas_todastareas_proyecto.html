@@ -1,11 +1,10 @@
+{% extends "../estructura/templatefinal.html" %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Último Comentario</title>
-</head>
-<body>
+{% block cabecera %}
+    <h1>Lista de Proyectos</h1>
+{% endblock %}
+
+{% block contenido %}
     <h1>Etiquetas utilizadas en el Proyecto</h1>
 
     {% if etiquetas %}
@@ -17,8 +16,7 @@
     {% else %}
         <p>No se encontraron etiquetas para este proyecto.</p>
     {% endif %}
-</body>
-</html>
+    {% endblock %}
 
 
 

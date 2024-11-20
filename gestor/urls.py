@@ -2,7 +2,7 @@ from django.urls import path
 from .views import inicio, lista_proyectos, lista_tareas, lista_usuarios, lista_tareas_textoconcreto, lista_tareas_completadas, ultimo_comentario_usuario_proyecto, todoscomentarios_palabraurl_añocomentario, etiquetas_todastareas_proyecto, usuariosnoasignados_tarea
 from django.conf.urls import handler400, handler403, handler404, handler500
 from gestor.views import error_400_view, error_403_view, error_404_view, error_500_view
-
+from . import views
 from django.conf.urls import handler400, handler403, handler404, handler500
 
 handler400 = "gestor.views.error400_view"
@@ -11,7 +11,9 @@ handler404 = "gestor.views.error404_view"
 handler500 = "gestor.views.error500_view"
 
 urlpatterns = [
-    path('', inicio, name='inicio'),  # Página de inicio home
+    path('inicio.html', views.inicio, name='inicio'),
+    
+    
     path('proyectos/', lista_proyectos, name='lista_proyectos'),  # URL para la lista de proyectos
     
     

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Último Comentario</title>
-</head>
-<body>
+{% extends "../estructura/templatefinal.html" %}
+
+{% block cabecera %}
     <h1>Comentarios que comienzan con "{{ palabra }}" del año {{ año }}</h1>
+{% endblock %}
+
+{% block contenido %}
+
 
     {% if comentarios %}
         <ul>
@@ -20,9 +20,7 @@
     {% else %}
         <p>No se encontraron comentarios que coincidan con la búsqueda.</p>
     {% endif %}
-    
-</body>
-</html>
+    {% endblock %}
 
 
 

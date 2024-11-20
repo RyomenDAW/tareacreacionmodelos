@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios Asignados a las Tareas</title>
-</head>
-<body>
-    <h1>Usuarios no asignados a la tarea</h1>
+{% extends "../estructura/templatefinal.html" %}
+
+{% block cabecera %}
+    <h1>Usuarios NO asignados a la tarea</h1>
+{% endblock %}
+
+{% block contenido %}
+
     <ul>
         {% for usuario in usuariosnoasignados_tarea %}
             <li>{{ usuario.nombre }}</li> <!-- Muestra el nombre de usuario -->
@@ -14,5 +13,4 @@
             <li>No hay usuarios no asignados a esta tarea.</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+    {% endblock %}

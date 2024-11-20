@@ -29,7 +29,7 @@ class Etiqueta (models.Model):
 class Tarea(models.Model):
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField(max_length=200)
-    prioridad = models.IntegerField(max_length=20)
+    prioridad = models.IntegerField()
     ESTADO_CHOICES = [
         ('Pendiente', 'Pendiente'),
         ('Progreso', 'En Progreso'),
