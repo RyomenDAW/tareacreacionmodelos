@@ -7,9 +7,8 @@
 {% block contenido %}
 
     {% if comentario %}
-        <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
-        <p><strong>Usuario:</strong> {{ comentario.autor.nombre }}</p> <!-- Aquí se muestra el nombre de usuario del autor -->
-        <p><strong>Fecha:</strong> {{ comentario.fecharegistro }}</p>
+    {% include "../estructura/comentario_for.html" %}
+
     {% else %}
         <p>No hay comentarios para esta tarea.</p>
     {% endif %}

@@ -7,17 +7,10 @@
 {% block contenido %}
     
         <ul>
-            {% for tarea in tareas %}
-                <li>
-                    <strong>Título:</strong> {{ tarea.titulo }} <br>
-                    <strong>Descripción:</strong> {{ tarea.descripcion }} <br>
-                    <strong>Prioridad:</strong> {{ tarea.prioridad }} <br>
-                    <strong>Estado:</strong> {{ tarea.estado }} <br>
-                    <strong>Fecha de Creación:</strong> {{ tarea.fechacreacion }} <br>
-                    <strong>Hora de Vencimiento:</strong> {{ tarea.horavencimiento }} <br>
-                    <hr>
-                </li>
-            {% endfor %}
+        {% for tarea in tareas %}
+            {% include "../estructura/tarea_for.html" %}
+        {% endfor %}
+
         </ul>
     
     <a href="{% url 'inicio' %}">Regresar a la página de inicio</a>
