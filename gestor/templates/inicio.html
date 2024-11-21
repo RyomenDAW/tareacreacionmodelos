@@ -12,7 +12,7 @@
             <li><a href="{% url 'lista_proyectos' %}">Ver Lista de Proyectos</a></li>
             <li><a href="{% url 'lista_tareas' %}">Ver Lista de Tareas Asociadas Ordenadas por fecha</a></li>
             <li><a href="{% url 'lista_usuarios' %}">Ver Lista de Usuarios</a></li>
-            <li><a href="{% url 'lista_tareas_textoconcreto'  %}">Ver Lista de Tareas con texto concreto</a></li>
+            <li><a href="{% url 'lista_tareas_textoconcreto' 'our' %}">Ver lista de tareas con texto concreto "our"</a></li>
             <li><a href="{% url 'lista_tareas_completadas' anio_inicio=2023 anio_fin=2025 %}">Ver Lista de Tareas 2 2023 a 2025</a></li>
             <li><a href="{% url 'ultimo_comentario_usuario_proyecto' id_proyecto=1 %}">Último Comentario default proyecto 1</a></li>
             <li><a href="{% url 'todoscomentarios_palabraurl_añocomentario' palabra="Heavy" año=2024 %}">Ver todos los comentarios con palabra 'Heavy' y año = 2024</a></li>

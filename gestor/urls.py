@@ -28,7 +28,7 @@ urlpatterns = [
     #Crear una URL que muestre todas las tareas que tengan un texto en concreto en las 
     # observaciones a la hora de asignarlas a un usuario.
 
-    path('tareas/textoconcreto/', lista_tareas_textoconcreto, name='lista_tareas_textoconcreto'),
+    path('tareas/textoconcreto/<str:texto_observacion>/', lista_tareas_textoconcreto, name='lista_tareas_textoconcreto'),
     
     
     #Crear una URL que muestre todos las tareas que se han creado entre dos años y el
