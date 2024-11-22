@@ -10,7 +10,7 @@
     {% if etiquetas %}
         <ul>
         {% for etiqueta in etiquetas %}
-            <li>{{ etiqueta.nombre }}</li>
+            {% include "../estructura/etiqueta_for.html" %}
         {% endfor %}
         </ul>
     {% else %}
