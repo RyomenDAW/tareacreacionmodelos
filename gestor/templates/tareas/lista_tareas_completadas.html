@@ -1,13 +1,17 @@
 {% extends "../estructura/templatefinal.html" %}
 
 {% block cabecera %}
-    <h1>Lista de Proyectos</h1>
+    <h1>Lista de Tareas Completadas</h1>
 {% endblock %}
 
 {% block contenido %}
     
         <ul>
             {% for tarea in tareas %}
+                {% if tarea.completada == 1 %}: 
+                {% comment %} PRIMER OPERADOR, IGUALDAD == {% endcomment %}
+                <p>Esta tarea si fue completada</p>
+                {% endif %}
             {% include "../estructura/tarea_for.html" %}
 
             {% endfor %}
@@ -17,9 +21,3 @@
     {% endblock %}
 
 
-    {% comment %} <ul>
-        {% for athlete in athlete_list %}
-            <li>{{ athlete.name }}</li>
-        {% endfor %}
-        </ul>
-         {% endcomment %}

@@ -1,13 +1,18 @@
 {% extends "../estructura/templatefinal.html" %}
 
 {% block cabecera %}
-    <h1>Usuarios NO asignados a la tarea</h1>
+    <h1>Usuarios NO asignados a la tarea 1</h1>
 {% endblock %}
 
 {% block contenido %}
 
     <ul>
         {% for usuario in usuariosnoasignados_tarea %}
+
+        {%if not usuario %}
+        <p>No existe ningun usuario segun este if not de antemano</p> 
+        {% comment %} Cuarto operador, if not. {% endcomment %}
+        {%endif%}
             <li>{{ usuario.nombre }}</li> <!-- Muestra el nombre de usuario -->
         {% empty %}
             <li>No hay usuarios no asignados a esta tarea.</li>

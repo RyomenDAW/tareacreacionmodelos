@@ -5,8 +5,8 @@
 <head>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/css.css' %}">
-    <script src="{% static 'javascript/script.js' %}"></script>
-    <img src="{% static 'imagenes/soulofcinder.png' %}" alt="Imagen de Django">
+    <script src="{% static './javascript/script.js' %}"></script>
+    <img src="{% static './imagenes/soulofcinder.png' %}" alt="Imagen de Django">
 
     
     <meta charset="UTF-8">
@@ -29,3 +29,14 @@
 
 </body>
 </html>
+
+{% comment %} CUARTO TEMPLATE TAG:, BLOCK Y ENDBLOCK
+Es blocky endblock
+
+{%block contenido%}
+{% endblock %} {% endcomment %}
+
+{% comment %} QUINTO TEMPLATE TAG, INCLUDE
+{% include './footer.html' %}
+
+Es include {% endcomment %}

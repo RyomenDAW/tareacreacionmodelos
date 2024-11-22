@@ -10,7 +10,7 @@
     {% if comentarios %}
         <ul>
         {% for comentario in comentarios %}
-        {% include "../estructura/comentario_for.html" %}
+            {% include "../estructura/comentario_for.html" %}
         {% endfor %}
         </ul>
     {% else %}
@@ -19,4 +19,8 @@
     {% endblock %}
 
 
-
+{% comment %} QUINTO TEMPLATE TAG, FOR, ENDFOR
+{% for comentario in comentarios %}
+{% include "../estructura/comentario_for.html" %}
+{% endfor %}
+ {% endcomment %}

@@ -1,17 +1,40 @@
 {% extends "../estructura/templatefinal.html" %}
 
 {% block cabecera %}
-    <h1>Lista de Tareas</h1>
+    <h1>Lista de Tareas independientes</h1>
 {% endblock %}
 
 {% block contenido %}
     
+
         <ul>
         {% for tarea in tareas %}
+            {%if tarea.descripcion|length > 170 %} 
+            <p>Descripcion larga!</p>
+            {%endif%}
+
+            {%if tarea.descripcion|length < 160 %}
+            <p>Descripcion corta!</p>
+            {%endif%}
+
+            {% comment %} SEGUNDO Y TERCER OPERADOR, ARIMETICOS > Y <,  {% endcomment %}
+
             {% include "../estructura/tarea_for.html" %}
+
+        {% empty %}
+            <p>No hay tareas actualmente, no puedo mostrarte la lista
         {% endfor %}
 
         </ul>
     
     <a href="{% url 'inicio' %}">Regresar a la página de inicio</a>
     {% endblock %}
+
+{% comment %} ESTE ES EL SEGUNDO TEMPLATE TAG, FOR EMPTY
+
+{% for tarea in tareas %}
+    {% include "../estructura/tarea_for.html" %}
+
+{% empty %}
+    <p>No hay tareas actualmente, no puedo mostrarte la lista
+{% endfor %} {% endcomment %}

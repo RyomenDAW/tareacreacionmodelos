@@ -1,19 +1,40 @@
 {% extends "../estructura/templatefinal.html" %}
 
 {% block cabecera %}
-    <h1>Lista de Proyectos</h1>
+    <h1>Lista de Tareas con el texto concreto</h1>
 {% endblock %}
 
 {% block contenido %}
-    
+    {% if tareas %}
         <ul>
             {% for asignaciontarea in tareas %}
-            {% include "../estructura/asignaciontarea_for.html" %}
-
-        {% endfor %}
-        
+            {%if asignaciontarea.tarea.descripcion|length > 170 and asignaciontarea.tarea.titulo|length  > 20 %}
+            <p>Esta descripcion de tarea es larga como su titulo</p>
+            {% comment %} QUINTO OPERADOR, ES UN AND {% endcomment %}
+            {%endif%}
+                {% include "../estructura/asignaciontarea_for.html" %}
+            {% empty %}
+                <p>No hay tareas asignadas en este momento.</p>
+            {% endfor %}
         </ul>
+    {% else %}
+        <p>No hay tareas disponibles para mostrar.</p>
+    {% endif %}
     
     <a href="{% url 'inicio' %}">Regresar a la página de inicio</a>
 {% endblock %}
 
+
+{% comment %} AQUI VA EL PRIMER TEMPLATE TAG , UN IF ELSE 
+
+{% if tareas %}
+<ul>
+    {% for asignaciontarea in tareas %}
+        {% include "../estructura/asignaciontarea_for.html" %}
+    {% empty %}
+        <p>No hay tareas asignadas en este momento.</p>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay tareas disponibles para mostrar.</p>
+{% endif %} {% endcomment %}
