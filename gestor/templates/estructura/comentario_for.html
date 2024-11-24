@@ -1,5 +1,8 @@
 <li>
-    <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
+    <p><strong>Comentario:</strong> {{ comentario.contenido|title }} <!-- Convierte la primera letra de cada palabra en mayúscula --> </p> 
     <p><strong>Usuario:</strong> {{ comentario.autor.nombre }}</p>
-    <p><strong>Fecha:</strong> {{ comentario.fecharegistro }}</p>
+    <p><strong>Fecha:</strong> {{ comentario.fecharegistro }}     {{ comentario.fecharegistro|default:"No disponible la fecha, lo sentimos" }}  <!-- Proporciona un valor por defecto si la variable está vacía o es None -->
+    </p>
+
+
 </li>

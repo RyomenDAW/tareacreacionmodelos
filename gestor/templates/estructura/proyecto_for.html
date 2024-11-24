@@ -13,12 +13,12 @@
     <tbody>
         {% for proyecto in proyectos %}
         <tr>
-            <td>{{ proyecto.nombre }}</td>
-            <td>{{ proyecto.descripcion }}</td>
+            <td>{{ proyecto.nombre|lower }}  </td> <!-- Convierte el texto a minúsculas -->
+            <td>{{ proyecto.descripcion|truncatewords:10 }}</td>  <!-- Usamos el filtro truncatewords, trunca el texto a un número específico de palabras, en este caso 10 -->
             <td>{{ proyecto.duracionestimada }}</td>
-            <td>{{ proyecto.fechainicio }}</td>
+            <td>{{ proyecto.fechainicio|date:"d M Y" }}  </td> <!-- Formatea la fecha en el formato "día mes año" -->
             <td>{{ proyecto.fechafinalizacion }}</td>
-            <td>{{ proyecto.creador.username }}</td>
+            <td>{{ proyecto.creador.username }}  </td>
             <td>
                 {% for colaborador in proyecto.colaboradores.all %}
                     {{ colaborador.username }}{% if not forloop.last %}, {% endif %}

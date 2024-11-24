@@ -1,9 +1,13 @@
 <li>
-    <strong>Título:</strong> {{ tarea.titulo }} <br>
-    <strong>Descripción:</strong> {{ tarea.descripcion }} <br>
-    <strong>Prioridad:</strong> {{ tarea.prioridad }} <br>
-    <strong>Estado:</strong> {{ tarea.estado }} <br>
+    <strong>Título:</strong> {{ tarea.titulo|upper }}  </td> <!-- Convierte el texto a minúsculas -->
+    <strong>Descripción:</strong> {{ tarea.descripcion|slice:":50" }}  <!-- Extrae una porción de una lista o cadena, sigue apareciendo descripcion corta/larga aun asi -->
+    <strong>Prioridad:</strong> {{ tarea.prioridad|add  "5" }} <!-- Suma un valor al original, yo le añadire 5 -->
+
+    <strong>Estado:</strong> {{ tarea.estado }}  <br> 
     <strong>Fecha de Creación:</strong> {{ tarea.fechacreacion }} <br>
-    <strong>Hora de Vencimiento:</strong> {{ tarea.horavencimiento }} <br>
+    <strong>Hora de Vencimiento:</strong> {{ tarea.horavencimiento }} {{ tarea.horavencimiento|default_if_none:"Sin valor, fecha no disponible =( " }}  <!-- Proporciona un valor solo si el valor es None -->
+    <br>
     <hr>
 </li>
+
+

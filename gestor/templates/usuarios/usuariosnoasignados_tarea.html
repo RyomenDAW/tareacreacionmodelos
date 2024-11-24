@@ -13,7 +13,7 @@
         <p>No existe ningun usuario segun este if not de antemano</p> 
         {% comment %} Cuarto operador, if not. {% endcomment %}
         {%endif%}
-            <li>{{ usuario.nombre }}</li> <!-- Muestra el nombre de usuario -->
+            <li>{{ usuario.nombre }}</li> 
         {% empty %}
             <li>No hay usuarios no asignados a esta tarea.</li>
         {% endfor %}
